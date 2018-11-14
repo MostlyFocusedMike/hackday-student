@@ -31,6 +31,7 @@ label, input {
   border: 2px solid blue;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
