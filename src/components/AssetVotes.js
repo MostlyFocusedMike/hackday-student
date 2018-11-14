@@ -33,7 +33,10 @@ class AssetVotes extends React.Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        AssetAdapter.update({id: this.state.id, "vote_value": this.state["vote_value"] }).then(console.log)
+        console.log('the state first:', this.state.id);
+        AssetAdapter.update({id: this.state.id, "vote_value": this.state["vote_value"] }).then((res) => {
+            console.log("update res:", res)
+        })
     }
     render() {
         return (

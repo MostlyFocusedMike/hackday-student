@@ -23,6 +23,7 @@ class AssetsContainer extends React.Component {
     }
 
     render() {
+        console.log('the assets that we]re looking for',this.state.assets );
         return (
             <div id="assets-container">
                 <h1>Welcome to {this.state.courseName}</h1>
