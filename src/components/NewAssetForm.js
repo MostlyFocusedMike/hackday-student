@@ -66,7 +66,7 @@ class NewAssetForm extends React.Component {
     console.log('props:', this.props);
 
     return (
-      <form
+      <form id="new-asset-form"
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
       >
@@ -82,7 +82,7 @@ class NewAssetForm extends React.Component {
           value={title}
         />
         <label htmlFor="description">Description</label>
-        <input
+        <textarea
           id="description"
           name="description"
           type="text"

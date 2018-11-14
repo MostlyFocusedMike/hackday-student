@@ -7,8 +7,8 @@ const AssetCard = (props) => {
     console.log('Here is the asset in question:', asset);
     return (
         <div id="asset-card">
-            <AssetInfo asset={asset}/>
             <AssetVotes asset={asset}/>
+            <AssetInfo asset={asset}/>
         </div>
     )
 }

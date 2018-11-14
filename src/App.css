@@ -1,51 +1,79 @@
-.App {
+#asset-card, #assets-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#new-asset-form {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: block;
+  margin: 1.5rem auto;
+  font-size: 1rem;
+  background: white;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+html, body {
+  font-family: sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#new-asset-form {
+  width: 30rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: left;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-label, input {
+#new-asset-form input, #new-asset-form textarea {
   display: block;
-  margin: 1rem auto 0;
+  width: 95%;
+}
+#new-asset-form label {
+  display: block;
+  padding-top: 1rem;
 }
 
-#submission-pop-up {
-  border: 2px solid blue;
+#assets-container {
+  height: 25rem;
+  overflow: auto;
+  border: 1px solid #000;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#asset-card {
+  border: 1px solid #000;
+  width: 80%;
+  margin: 1rem;
+  padding: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+#asset-card #asset-votes {
+  margin: 1rem;
+}
+#asset-card #asset-votes p {
+  font-size: 2rem;
+}
+#asset-card #asset-info {
+  width: 70%;
+}
+#asset-card #asset-info p {
+  display: block;
+  width: 100%;
 }
 
-@keyframes fade {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0%;
-  }
+#asset-votes {
+  border: 1px solid #000;
+  margin: 0;
 }
+#asset-votes p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+#asset-votes button {
+  display: block;
+  margin: 0.1rem auto;
+}
+
+/*# sourceMappingURL=app.css.map */

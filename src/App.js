@@ -14,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Welcome to Biology</h1>
         <AssetsContainer courseId="1"/>
         <NewAssetForm courseId="1"/>
       </div>

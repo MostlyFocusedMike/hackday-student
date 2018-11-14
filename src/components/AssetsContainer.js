@@ -26,7 +26,6 @@ class AssetsContainer extends React.Component {
         console.log('the assets that we]re looking for',this.state.assets );
         return (
             <div id="assets-container">
-                <h1>Welcome to {this.state.courseName}</h1>
                 {
                     this.state.assets.map((asset, idx) => {
                         return <AssetCard asset={asset} key={idx}/>

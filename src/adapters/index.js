@@ -1,7 +1,4 @@
-const urlGet = require('../dummy-db/courses-id.json')
 const url = "https://desolate-scrubland-80473.herokuapp.com"
-const urlPost = "http://localhost:3000/assets" // this one uses json server
-const urlPatch = "http://localhost:3000/assets"
 
 export class CourseAdapter {
   static getOne(courseId) {
@@ -23,17 +20,17 @@ export class AssetAdapter {
       .then(r => r.json())
   }
 
-static update(asset) {
-    let options = {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(asset)
-    };
-    console.log('options:', options);
-    return fetch(`${url}/assets/${asset.id}`, options)
-      .then((response) => response.json())
-}
+  static update(asset) {
+      let options = {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(asset)
+      };
+      console.log('options:', options);
+      return fetch(`${url}/assets/${asset.id}`, options)
+        .then((response) => response.json())
+  }
 
 }

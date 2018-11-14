@@ -42,7 +42,7 @@ class AssetVotes extends React.Component {
         return (
             <form id="asset-votes" onSubmit={this.handleSubmit}>
                 <button id="vote-up" data-count="1" onClick={this.handleVote}>Up</button>
-                {this.state.votes}
+                <p>{this.state.votes}</p>
                 <button id="vote-up" data-count="-1" onClick={this.handleVote}>Down</button>
             </form>
         )
