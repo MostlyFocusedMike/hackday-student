@@ -15,13 +15,16 @@ class AssetVotes extends React.Component {
         e.preventDefault();
         e.persist()
         const num = parseInt(e.target.dataset.count)
+        console.log('limit: ', this.state.voteCheck + num );
+        console.log('vote check: ', this.state.voteCheck);
+        console.log('num: ', num);
         if (Math.abs(this.state.voteCheck + num) > 1) {
             return false;
         }
         this.setState((prevState) => {
             return {
                 votes: prevState.votes + num,
-                voteCheck:  prevState.voteValue + num,
+                voteCheck:  prevState.voteCheck + num,
                 "vote_value":  num,
             }
         }, () => {
