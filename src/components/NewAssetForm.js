@@ -3,14 +3,15 @@ import SubmissionPopUp from './SubmissionPopUp'
 import { AssetAdapter } from '../adapters';
 
 class NewAssetForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.initState = {
         asset: {
             title: "",
             description: "",
             link: "",
+            "course_id": props.courseId
         },
         popUpVisible: false,
         success: true
@@ -34,6 +35,7 @@ class NewAssetForm extends React.Component {
     AssetAdapter.create(this.state.asset)
         .then((resp) => {
             if (resp.message) this.setState({ success: false })
+            console.log('Response from new asset', resp);
             this.setState({
                 popUpVisible: true
             })
@@ -61,6 +63,8 @@ class NewAssetForm extends React.Component {
   }
   render() {
     const {asset: {title, link, description}, success, popUpVisible } = this.state
+    console.log('props:', this.props);
+
     return (
       <form
         onChange={this.handleChange}
