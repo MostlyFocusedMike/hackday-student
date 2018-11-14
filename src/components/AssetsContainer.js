@@ -1,6 +1,6 @@
 import React from 'react'
 import AssetCard from './AssetCard'
-import { CoursesAdapter } from '../adapters'
+import { CourseAdapter } from '../adapters'
 
 class AssetsContainer extends React.Component {
     constructor() {
@@ -13,7 +13,7 @@ class AssetsContainer extends React.Component {
     }
 
     componentDidMount() {
-        CoursesAdapter.getOne()
+        CourseAdapter.getOne()
             .then( resp => {
                 console.log('resp:  ',resp );
                 this.setState({

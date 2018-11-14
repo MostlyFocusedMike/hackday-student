@@ -3,7 +3,7 @@ import AssetVotes from './AssetVotes'
 import AssetInfo from './AssetInfo'
 
 const AssetCard = (props) => {
-    const {asset: {name, description, link}, asset} = props
+    const {asset} = props
     return (
         <div id="asset-card">
             <AssetInfo asset={asset}/>

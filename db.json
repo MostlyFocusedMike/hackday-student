@@ -1,0 +1,24 @@
+{
+  "assets": [
+    {
+      "id": 1,
+      "title": "How to find out how electrons work",
+      "link": "https://science.com",
+      "description": "I think this site rocks at explaining how electrons work",
+      "votes": 12
+    },
+    {
+      "title": "testerino",
+      "link": "https://sci.com",
+      "description": "I loc",
+      "votes": 1400,
+      "id": 2
+    },
+    {
+      "title": "Electrons: what?",
+      "description": "It's really helpful for chaper 12, specifically the last section",
+      "link": "https://itnext.io/using-json-server-to-create-a-restful-server-in-5-seconds-78b85ccf832b",
+      "id": 3
+    }
+  ]
+}

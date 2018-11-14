@@ -4,21 +4,21 @@
     "assets": [
         {
             "id": 1,
-            "name": "How to find out how electrons work",
+            "title": "How to find out how electrons work",
             "link": "https://science.com",
             "description": "I think this site rocks at explaining how electrons work",
             "votes": 12
         },
         {
             "id": 2,
-            "name": "Is the hadron colider gonna kill all humans? Science says, 'maybe.'",
+            "title": "Is the hadron colider gonna kill all humans? Science says, 'maybe.'",
             "link": "https://physics.com",
             "description": "Chapter 3 is super hard, but this site really helped",
             "votes": 34
         },
         {
             "id": 3,
-            "name": "Where do blackholes come frome?",
+            "title": "Where do blackholes come frome?",
             "link": "https://stars.com",
             "description": "Not super related, but i just think it's interesting and comes into play later",
             "votes": 5

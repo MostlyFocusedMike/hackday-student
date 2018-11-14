@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AssetsContainer from './components/AssetsContainer'
+import NewAssetForm from './components/NewAssetForm'
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <AssetsContainer courseId="1"/>
+        <NewAssetForm />
       </div>
     );
   }
