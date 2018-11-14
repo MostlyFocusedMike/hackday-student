@@ -7,17 +7,23 @@ class NewAssetForm extends React.Component {
     super();
 
     this.initState = {
-        title: "",
-        description: "",
-        link: "",
-        popUpVisible: false
+        asset: {
+            title: "",
+            description: "",
+            link: "",
+        },
+        popUpVisible: false,
+        success: true
     };
     this.state = this.initState;
   }
 
   handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+        asset: {
+            ...this.state.asset,
+            [e.target.name]: e.target.value
+        }
     });
   }
 
@@ -25,11 +31,16 @@ class NewAssetForm extends React.Component {
     e.preventDefault();
     console.log('submitted');
     this.setState(this.initState);
-    this.setState({
-        popUpVisible: true
-    })
-    AssetAdapter.create(this.state)
-        .then(console.log)
+    AssetAdapter.create(this.state.asset)
+        .then((resp) => {
+            if (resp.message) this.setState({ success: false })
+            this.setState({
+                popUpVisible: true
+            })
+        })
+        .then(() => {
+            this.togglePopUp()
+        })
   }
 
   handleClear = (e) => {
@@ -37,36 +48,48 @@ class NewAssetForm extends React.Component {
     this.setState(this.initState);
   }
 
+  handleDismiss = (e) => {
+    e.preventDefault();
+    this.setState(this.initiState)
+  }
+  togglePopUp = () => {
+    setTimeout(() => {
+        this.setState({
+            popUpVisible: false
+        })
+    }, 1500);
+  }
   render() {
+    const {asset: {title, link, description}, success, popUpVisible } = this.state
     return (
       <form
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
       >
         {
-            this.state.popUpVisible ?
-            <SubmissionPopUp /> : ""
+            popUpVisible ?
+            <SubmissionPopUp success={success} dismiss={this.handleDismiss}/> : ""
         }
         <label htmlFor="title">Title</label>
         <input
           id="title"
           name="title"
           type="text"
-          value={this.state.title}
+          value={title}
         />
         <label htmlFor="description">Description</label>
         <input
           id="description"
           name="description"
           type="text"
-          value={this.state.description}
+          value={description}
         />
         <label htmlFor="link">Link</label>
         <input
           id="link"
           name="link"
           type="text"
-          value={this.state.link}
+          value={link}
         />
         <button>Submit</button>
         <button onClick={this.handleClear}>Clear</button>

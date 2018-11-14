@@ -1,10 +1,13 @@
 import React from 'react'
 
 const SubmissionPopUp = (props) => {
-
+    console.log('subission props', props);
     return (
         <div id="submission-pop-up">
-            Submission happened
+            {
+                props.success ?
+                "Submitted successfully!" : "there was an error please try again"
+            }
         </div>
     )
 }
