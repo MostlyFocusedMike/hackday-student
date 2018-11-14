@@ -1,4 +1,5 @@
 import React from 'react';
+import SubmissionPopUp from './SubmissionPopUp'
 import { AssetAdapter } from '../adapters';
 
 class NewAssetForm extends React.Component {
@@ -9,6 +10,7 @@ class NewAssetForm extends React.Component {
         title: "",
         description: "",
         link: "",
+        popUpVisible: false
     };
     this.state = this.initState;
   }
@@ -23,7 +25,9 @@ class NewAssetForm extends React.Component {
     e.preventDefault();
     console.log('submitted');
     this.setState(this.initState);
-
+    this.setState({
+        popUpVisible: true
+    })
     AssetAdapter.create(this.state)
         .then(console.log)
   }
@@ -39,6 +43,10 @@ class NewAssetForm extends React.Component {
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
       >
+        {
+            this.state.popUpVisible ?
+            <SubmissionPopUp /> : ""
+        }
         <label htmlFor="title">Title</label>
         <input
           id="title"

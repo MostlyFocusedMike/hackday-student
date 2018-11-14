@@ -1,6 +1,6 @@
 const urlGet = require('../dummy-db/courses-id.json')
 // const url = "http://localhost:3000"
-const urlPost = "http://localhost:3000/assets"
+const urlPost = "http://localhost:3000/assets" // this one uses json server
 // const urlPatch = "../dummy-db/courses-id.json"
 
 export class CourseAdapter {

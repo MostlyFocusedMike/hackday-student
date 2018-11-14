@@ -13,9 +13,8 @@ class AssetsContainer extends React.Component {
     }
 
     componentDidMount() {
-        CourseAdapter.getOne()
+        CourseAdapter.getOne(this.props.courseId)
             .then( resp => {
-                console.log('resp:  ',resp );
                 this.setState({
                     assets: resp.assets,
                     courseName: resp.name
@@ -28,8 +27,8 @@ class AssetsContainer extends React.Component {
             <div id="assets-container">
                 <h1>Welcome to {this.state.courseName}</h1>
                 {
-                    this.state.assets.map(asset => {
-                        return <AssetCard asset={asset} />
+                    this.state.assets.map((asset, idx) => {
+                        return <AssetCard asset={asset} key={idx}/>
                     })
                 }
             </div>
